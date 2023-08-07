@@ -7,29 +7,24 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class Post extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_post);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.homeID);
+        bottomNavigationView.setSelectedItemId(R.id.postID);
         bottomNavigationView.setOnItemSelectedListener(item -> {
 
             switch (item.getItemId()){
-                case R.id.homeID:
-                    return true;
-
-                case R.id.businessID:
-                    startActivity(new Intent(getApplicationContext(),Business.class));
-                    overridePendingTransition(R.anim.slide_in_right,R.anim.slide_in_left);
-                    finish();
-                    return true;
-
                 case R.id.postID:
-                    startActivity(new Intent(getApplicationContext(),Post.class));
+                    return true;
+
+
+                case R.id.homeID:
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
                     overridePendingTransition(R.anim.slide_in_right,R.anim.slide_in_left);
                     finish();
                     return true;
@@ -45,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
                     overridePendingTransition(R.anim.slide_in_right,R.anim.slide_in_left);
                     finish();
                     return true;
+
+
+                case R.id.businessID:
+                    startActivity(new Intent(getApplicationContext(),Business.class));
+                    overridePendingTransition(R.anim.slide_in_right,R.anim.slide_in_left);
+                    finish();
+                    return true;
+
             }
             return false;
         });

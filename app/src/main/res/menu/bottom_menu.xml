@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/homeId"
+    <item android:id="@+id/homeID"
         android:icon="@drawable/home_icon"
         android:title="Home">
     </item>
     <item android:id="@+id/businessID"
         android:icon="@drawable/business_icon"
-        android:title="Business"
+        android:title="Message"
         >
     </item>
 
     <item android:id="@+id/postID"
         android:icon="@drawable/baseline_post_add_24"
-        android:title="Post"
+        android:title="Product"
         >
     </item>
 
     <item android:id="@+id/reportID"
         android:icon="@drawable/report_icon"
-        android:title="Report"
+        android:title="Settings"
         >
     </item>
 
     <item android:id="@+id/profileID"
         android:icon="@drawable/profile_icon"
-        android:title="Profile"
+        android:title="Settings"
         >
     </item>
 

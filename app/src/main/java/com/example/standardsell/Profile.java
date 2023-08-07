@@ -7,19 +7,26 @@ import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity {
+public class Profile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_profile);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setSelectedItemId(R.id.homeID);
+        bottomNavigationView.setSelectedItemId(R.id.profileID);
         bottomNavigationView.setOnItemSelectedListener(item -> {
 
             switch (item.getItemId()){
+                case R.id.profileID:
+                    return true;
+
+
                 case R.id.homeID:
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right,R.anim.slide_in_left);
+                    finish();
                     return true;
 
                 case R.id.businessID:
@@ -40,11 +47,6 @@ public class MainActivity extends AppCompatActivity {
                     finish();
                     return true;
 
-                case R.id.profileID:
-                    startActivity(new Intent(getApplicationContext(),Profile.class));
-                    overridePendingTransition(R.anim.slide_in_right,R.anim.slide_in_left);
-                    finish();
-                    return true;
             }
             return false;
         });
